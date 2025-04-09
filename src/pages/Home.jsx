@@ -1,13 +1,14 @@
 import React from "react";
-import NavBar from "../components/NavBar";
+
 import { CategoryMenu } from "../components/CategoryMenu";
 import FoodItem from "../components/FoodItem";
 import Cart from "../components/Cart";
+import Navbar from "../components/Navbar";
 
 const Home = () => {
   return (
     <>
-      <NavBar />
+      <Navbar />
       <CategoryMenu />
       <FoodItem />
       <Cart />
