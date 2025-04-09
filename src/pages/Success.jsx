@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { PropagateLoader } from "react-spinners";
+import { FaCheckCircle } from "react-icons/fa";
 
 const Success = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       setLoading(false);
     }, 3000);
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -20,9 +23,12 @@ const Success = () => {
         />
       ) : (
         <div className="text-center">
-          <h2 className="text-3xl font-semibold mb-4">Order Successful</h2>
+          <div className="flex justify-center items-center gap-2 py-2">
+            <FaCheckCircle className="text-green-500 text-3xl " />
+            <h2 className="text-3xl font-semibold ">Order Successful</h2>
+          </div>
           <p className="text-xl font-bold">
-            Your Order has been placed successfully!
+            Your order has been placed successfully👌!
           </p>
         </div>
       )}
